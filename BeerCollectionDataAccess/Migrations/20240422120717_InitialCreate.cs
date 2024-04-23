@@ -19,7 +19,6 @@ namespace BeerCollectionDataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Rating = table.Column<double>(type: "float", nullable: false),
-                    RatingCount = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

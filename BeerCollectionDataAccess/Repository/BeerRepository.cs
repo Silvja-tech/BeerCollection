@@ -38,10 +38,10 @@ namespace BeerCollectionDataAccess.Repository
             var beer = _context.Beers.FirstOrDefault(b => b.Id == id);
             if (beer != null)
             {
-                // Calculate the new average rating
-                var totalRating = beer.Rating * beer.RatingCount;
-                beer.RatingCount++;
-                beer.Rating = (totalRating + newRating) / beer.RatingCount;
+                double totalRating = beer.Rating != 0 ? beer.Rating : 0;
+                double averageRating = (totalRating + newRating) / 2;
+
+                beer.Rating = averageRating;
 
                 _context.SaveChanges();
             }

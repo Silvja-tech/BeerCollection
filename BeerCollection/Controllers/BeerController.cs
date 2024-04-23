@@ -21,14 +21,7 @@ namespace BeerCollectionApi.Controllers
         public IActionResult AddBeer([FromBody] BeerDto beerDto)
         {
 
-            var beer = new BeerDto
-            {
-                Name = beerDto.Name,
-                Type = beerDto.Type,
-                Rating = beerDto.Rating
-            };
-
-            _beerService.AddBeer(beer);
+            _beerService.AddBeer(beerDto);
 
             return Ok("Beer added successfully");
         }
